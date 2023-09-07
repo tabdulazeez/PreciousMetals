@@ -1,0 +1,151 @@
+---
+title: "Investing in Precious Metals"
+author: "Tajudeen Abdulazeez"
+date: "9/7/2023"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    source_code: embed
+    theme: "spacelab"
+runtime: shiny
+---
+
+
+
+Background
+=======================================================================
+
+## {.sidebar}
+
+Investing in Precious Metals: An overview of investing in gold, silver, and other precious metals as an asset class.
+
+###
+<html>
+<body>
+
+<p><a href="https://github.com/tabdulazeez/PreciousMetals"   target="_blank">Source Code on GitHub</a></p>
+
+<p><a href="#"   target="_blank"> Link to the Youtube Video </a></p>
+
+<p><a href="#"   target="_blank"> Link to the Blog Post </a></p>
+
+</body>
+</html>
+
+
+Column
+-----------------------------------------------------------------------
+
+### Problem
+
+InvestorInsights101, a USA-based company, is seeking to allocate an initial investment capital of $10,000 into precious metals. In pursuit of this investment objective, the company faces the challenge of determining the optimal risk profile and identifying opportunities within the precious metals market. To make informed investment decisions, InvestorInsights101 requires a comprehensive assessment of the risks associated with precious metal investments, as well as a detailed analysis of the current opportunities and market dynamics within the precious metals sector. The company seeks a strategic approach to maximize returns while mitigating potential risks, ensuring its investments align with its financial goals and risk tolerance.
+
+### Data and analysis to inform the decision
+
+- Spot market prices of gold, silver, and aluminium
+- Gold and Silver: correlation
+- Gold and Aluminium: correlation
+- Silver and Aluminium: Correlation
+- Gold and Silver: Correlation sensitivity to Silver dependency
+- All together: correlations and volaitlities among these indicators
+- Cross-section of rolling correlation will be visualize correlation
+
+
+### Method
+
+Identify the optimal combination of Gold, Silver, and Aluminium to trade
+
+1.	Product: Precious Metals 
+
+
+##
+### Stylized facts of the Metals market
+
+- The London Metal Exchange (LME) serves as the global hub for commodity exchange, particularly for non-ferrous metals.
+
+- In 2016, the LME facilitated trading with a notional value of $10.3 trillion USD, involving the exchange of an impressive 3.5 billion metric tons of metals.
+
+- Volatility within the metals market is seldom static; it often exhibits a structured pattern known as mean reversion, influenced by its historical performance.
+
+- Historical shocks in the metals market have a tendency to persist over time, with their impact potentially either diminishing or remaining consistent, akin to ripples spreading in a pool of water.
+
+- The metals market is susceptible to extreme events, which have a propensity to occur in conjunction with other extreme events, leading to periods of heightened market turbulence.
+
+- When considering returns in the metals market, it's worth noting that negative returns are more likely to occur than positive returns, resulting in a left-skewed distribution of returns.
+
+
+### Key business questions
+
+- What are the current trends and outlook for the precious metals market, and how might they impact InvestorInsights101's investment strategy?
+
+- What is the historical performance and volatility of different precious metals (e.g., gold, silver, platinum) as investment assets, and how can this information inform the company's risk assessment and asset allocation decisions?
+
+- What strategies or investment vehicles are available for allocating the $10,000 capital into precious metals, and what are the associated risks and potential returns for each option?
+
+- How can InvestorInsights101 establish a risk management framework that aligns with its financial goals and risk tolerance while investing in precious metals, taking into account factors such as diversification, hedging, and market analysis?
+
+
+### History speaks
+
+In the realm of historical data analysis, we delve into the realms of "value at risk" (VaR) and "expected shortfall" (ES) metrics by drawing insights from simulated historical distributions of risk factors.
+
+Our journey begins by combining these factors into a portfolio and computing the resultant losses. Armed with this loss distribution, we embark on the quest to calculate the risk measures. Notably, our approach is firmly rooted in nonparametric methodologies.
+
+As we traverse the terrain of risk assessment, we set a tolerance level, denoted by $\alpha$, often set at 95%. In practical terms, this signifies that a decision maker is unwilling to accept losses exceeding $\alpha$, or 5%, in all considered risk scenarios.
+
+Our first landmark is the definition of VaR, the quantile associated with the probability $\alpha$, expressed as:
+
+
+$$
+\Large
+VaR_{\alpha} (X) = inf \{ x \in R: F(x) \geq \alpha \},
+$$
+
+Where "inf" represents the greatest lower bound of loss, denoted by $x$. In simpler terms, we seek the lowest potential loss, $x$, such that the cumulative probability of encountering a loss greater than or equal to $x$ is at least $\alpha$.
+
+Building upon this foundation, we introduce ES, or "expected shortfall," defined as:
+
+$$
+\Large
+ES_{\alpha} = E [X \lvert X \geq VaR_{\alpha}],
+$$
+
+Here, ES represents the average of all losses surpassing the loss associated with the VaR at a probability level of $\alpha$. In essence, ES provides a measure of expected loss that is more severe than the VaR level.
+
+
+
+Data
+=======================================================================
+
+Column
+-----------------------------------------------------------------------
+
+### Data Definitions
+
+- *Gold*: daily gold price (\$/per metric ton)
+- *Silver*: daily silver prices (\$/per metric ton)
+- *Aluminium *: daily aluminium prices (\$/per metric ton)
+
+
+### Historical data 2012-2016
+
+- Gold has witnessed several notable price spikes and substantial percentage changes in magnitude over the years.
+
+- Silver exhibits a relatively lower level of price volatility compared to some other precious metals, resulting in fewer significant percentage changes in magnitude.
+
+- Aluminium, during the years 2015 and 2016, encountered periods of heightened volatility with noticeable shocks in its price dynamics.
+
+### Data and markets
+
+- Quandl for data
+- Github and Stack Overflow for trouble shooting
+- LME.com (London Metals Exchange)
+
+
+
+
+
+
+
+
+
